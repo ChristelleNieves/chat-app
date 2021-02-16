@@ -1,0 +1,126 @@
+body {
+    background-color: #222831;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    font-size: 20px;
+}
+
+.form-container {
+    height: 300px;
+    width: 700px;
+    background-color: #393e46;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #000;
+    margin: auto;
+    padding: 40px;
+}
+
+.outer-form-container {
+    margin-top: 40px;
+}
+
+.login-btn {
+    margin-top: 30px;
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.send-btn {
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.55);
+    margin-bottom: 40px;
+}
+
+.btn {
+    margin-bottom: 15px;
+}
+
+.chat-logo-container {
+    margin-top: 50px;
+    place-items: center;
+    font-size: 150px;
+    color: white;
+}
+
+.fa-comments {
+    font-size: 30px;
+}
+
+.fa-comment-dots {
+    font-size: 100px;
+    padding: 10px;
+}
+
+.form-control {
+    margin-top: 15px;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 10px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: 1px solid black;
+}
+
+.chat {
+    color: DeepSkyBlue;
+}
+
+.chat-container {
+    width: 700px;
+    padding: 10px;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    margin: 0 auto;
+    box-shadow: 0 0 10px 0 #000;
+    border-radius: 30px;
+}
+
+.chat-outer {
+    place-items: center;
+    align-items: center;
+    margin-top: 70px;
+
+}
+
+.message-bubble {
+    width: auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222831;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.message {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    align-items: flex-start;
+    background-color: #EEEEEE;
+    position: relative;
+    max-width: 300px;
+}
+
+.message-send-form {
+    margin-top: 35px;
+}
+
+.custom-select {
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: 1px solid black;
+    height: 50px;
+}
