@@ -51,6 +51,7 @@
         const newMessage = document.createElement('div');
         newMessage.className = 'message';
         newMessage.style.backgroundColor = 'white';
+        newMessage.style.color = 'IndianRed';
         newMessage.innerHTML = `${data.username} has joined the room`;
         document.getElementById('message-bubble').appendChild(newMessage);
     });
@@ -60,6 +61,7 @@
         const newMessage = document.createElement('div');
         newMessage.className = 'message';
         newMessage.style.backgroundColor = 'white';
+        newMessage.style.color = 'IndianRed';
         newMessage.innerHTML = `${username} has left the room`;
         document.getElementById('message-bubble').appendChild(newMessage);
     });
