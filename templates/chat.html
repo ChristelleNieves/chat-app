@@ -55,6 +55,15 @@
         document.getElementById('message-bubble').appendChild(newMessage);
     });
 
+    socket.on('log_out_announcement', function(username) {
+        console.log(username + " has left the room.");
+        const newMessage = document.createElement('div');
+        newMessage.className = 'message';
+        newMessage.style.backgroundColor = 'white';
+        newMessage.innerHTML = `${username} has left the room`;
+        document.getElementById('message-bubble').appendChild(newMessage);
+    });
+
 </script>
 
 <!-- NAVBAR -->

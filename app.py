@@ -48,6 +48,7 @@ def log_in():
 
 @app.route('/log_out')
 def log_out():
+    socketio.emit('log_out_announcement', session.get('username'))
     session['username'] = ""
     session['logged_in'] = False
     return home()
