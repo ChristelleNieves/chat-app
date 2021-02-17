@@ -65,6 +65,15 @@ def handle_join_room(data):
 def handle_send_message(data):
     app.logger.info("{} has sent a message to the room: {}".format(data['username'], data['message']))
 
+    # Save the username and message into the Messages table in the database
+    con = sqlite3.connect('data.db')
+    cur = con.cursor()
+    cur.execute('''INSERT INTO Messages (Username, Content)
+        VALUES (?,?)''', (data['username'], data['message']))
+    con.commit()
+
+    con.close()
+
     return socketio.emit('receive_message', data)
 
 
