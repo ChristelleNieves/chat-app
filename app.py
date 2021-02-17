@@ -54,6 +54,16 @@ def log_out():
     return home()
 
 
+@app.route('/history')
+def history():
+    con = sqlite3.connect('data.db')
+    cur = con.cursor()
+    cur.execute('SELECT * FROM Messages')
+    data = cur.fetchall()
+
+    return render_template('history.html', data=data)
+
+
 @socketio.on('join_room')
 def handle_join_room(data):
     app.logger.info("{} has joined the room.".format(data['username']))

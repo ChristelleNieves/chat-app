@@ -124,3 +124,12 @@ body {
     border: 1px solid black;
     height: 50px;
 }
+
+.history-title {
+    margin-top: 50px;
+}
+
+.history-title-content {
+    font-size: 75px;
+    color: white;
+}
