@@ -26,7 +26,7 @@ def log_in():
             color = request.form['color']
 
             if username and not username.isspace():
-                with sqlite3.connect('data.db') as con:
+                with sqlite3.connect('database.db') as con:
                     cur = con.cursor()
 
                     cur.execute("INSERT INTO User (Username) VALUES(?);", (username,))
@@ -43,6 +43,7 @@ def log_in():
             con.rollback()
             flash("Error logging in")
         finally:
+            con.close()
             return home()
 
 
@@ -56,10 +57,11 @@ def log_out():
 
 @app.route('/history')
 def history():
-    con = sqlite3.connect('data.db')
+    con = sqlite3.connect('database.db')
     cur = con.cursor()
     cur.execute('SELECT * FROM Messages')
     data = cur.fetchall()
+    con.close()
 
     return render_template('history.html', data=data)
 
@@ -76,7 +78,7 @@ def handle_send_message(data):
     app.logger.info("{} has sent a message to the room: {}".format(data['username'], data['message']))
 
     # Save the username and message into the Messages table in the database
-    con = sqlite3.connect('data.db')
+    con = sqlite3.connect('database.db')
     cur = con.cursor()
     cur.execute('''INSERT INTO Messages (Username, Content)
         VALUES (?,?)''', (data['username'], data['message']))
